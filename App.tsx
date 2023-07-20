@@ -7,12 +7,20 @@
 
 import React from 'react';
 import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
+import {RadioButton} from 'react-native-paper';
 
 function App(): JSX.Element {
   return (
     <SafeAreaView style={styles.layout}>
       <View style={styles.container}>
-        <Text>Welcome! Let's build a MacOS App</Text>
+        <View style={styles.item}>
+          <RadioButton
+            value={'Subscribe to notJust.dev'}
+            status={'checked'}
+            color="royalblue"
+          />
+          <Text style={styles.itemTitle}>Subscribe to notJust.dev</Text>
+        </View>
       </View>
     </SafeAreaView>
   );
@@ -20,7 +28,22 @@ function App(): JSX.Element {
 
 const styles = StyleSheet.create({
   layout: {flex: 1},
-  container: {flex: 1, justifyContent: 'center', alignItems: 'center'},
+  container: {
+    padding: 10,
+    flex: 1,
+    backgroundColor: '#211D2D',
+  },
+  item: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderColor: '#454547',
+    paddingVertical: 5,
+  },
+  itemTitle: {
+    flex: 1,
+    marginLeft: 5,
+  },
 });
 
 export default App;
